@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableView?> 
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.ComboBox?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uts.soal2.soal2_controller">
+<children>
+   
+   <Label text="TABEL KENDARAAN" />
+   <!-- tabel -->
+   <TableView fx:id="Kendaraan_List_Table" prefHeight="200.0" prefWidth="200.0">
+      <columns>
+         <TableColumn fx:id="Kendaraan_Jenis" text="Jenis" prefWidth="200" />
+         <TableColumn fx:id="Kendaraan_Durasi" text="Durasi" prefWidth="200" />
+         <TableColumn fx:id="Kendaraan_TotalBiaya" text="id" prefWidth="200"/>
+      </columns>
+   </TableView>
+
+   <!-- <Label fx:id="Input_Berhasil" text="" textFill="GREEN" visible="false"/> -->
+
+   <!-- Memilih Metode Input -->
+   <Label text="Pilih metode menghitung biaya" />
+   <HBox alignment="CENTER" spacing="20.0">
+      <Button fx:id="Durasi_Method" text="Durasi" onAction="#showDurasi" />
+      <Button fx:id="Jam_Method" text="Waktu" onAction="#showJam" />
+   </HBox>
+
+   <!-- Plat Kendaraan -->
+   <Label text="Jenis Kendaraan" />
+   <ComboBox fx:id="Jenis_Kendaraan" promptText="Pilih Tipe"/>
+   <!-- <TextField fx:id="Jenis_Kendaraan" promptText="Jenis Kendaraan" text=""/>  -->
+   
+   <!-- Berdasarkan Durasi -->
+   <VBox fx:id="Durasi_Method_Container" spacing="10.0" visible="false">
+      <Label text="Durasi (Jam)" />
+      <TextField fx:id="Durasi_TextField" prefWidth="200" />
+      <Button fx:id="Hitung_Biaya" text="Hitung Biaya" onAction="#hitung" />
+   </VBox>
+   
+   <!-- Berdasarkan Jam -->
+   <VBox fx:id="Jam_Method_Container" alignment="CENTER" spacing="10.0" visible="false">
+      <HBox spacing="10.0" alignment="CENTER" >
+         <VBox alignment="CENTER" spacing="20.0">
+            <Label text="Jam Masuk" />
+            <TextField fx:id="JamMasuk_TextField" prefWidth="200.0" />
+         </VBox>
+
+         <VBox alignment="CENTER" spacing="20.0">
+            <Label text="Jam Keluar" />
+            <TextField fx:id="JamKeluar_TextField" prefWidth="200.0" />
+         </VBox>
+      </HBox>  
+      <Button fx:id="Hitung_Biaya" alignment="CENTER" text="Hitung Biaya" onAction="#hitung" />
+   </VBox>
+
+   <VBox fx:id="Summary_Container" visible="false" style="-fx-background-color: lightgreen; -fx-padding: 20px; -fx-font-size: 20px;" >
+      <HBox alignment="CENTER" spacing="20.0">
+         <Label text="Data Berhasil Ditambahkan!" style="-fx-font-size: 25px;" />
+      </HBox>
+      <Label fx:id="Summary_Type" />
+      <Label fx:id="Summary_Time" />
+      <Label fx:id="Summary_Fee" />
+   </VBox>
+   <Button text="END SESSION" onAction="#finalReport" />
+
+
+</children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
