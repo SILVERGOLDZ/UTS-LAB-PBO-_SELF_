@@ -1,3 +1,3 @@
-Tugas ini dikerjakan menggunakan JavaFX Maven.
+Tugas ini dikerjakan menggunakan ***JavaFX Maven***.
 
-Versi Java : JDK 21.0.6
+Versi Java : ***JDK 21.0.6***
